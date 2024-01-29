@@ -59,6 +59,12 @@ PRODUCT_PACKAGES += \
     OPlusSettingsProviderResTarget \
     OPlusSystemUIResTarget
 
+# Overlay for OPlusExtras
+ifeq ($(WITH_OPLUSEXTRAS), true)
+PRODUCT_PACKAGES += \
+    OPlusExtrasResTarget
+endif
+
 # Sensors
 PRODUCT_PACKAGES += \
     als_correction_service.lunaa \
