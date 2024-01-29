@@ -23,6 +23,14 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Inherit from MindTheGApps
+ifeq ($(WITH_GMS), true)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+TARGET_UNOFFICIAL_BUILD_ID += Gapps
+else
+TARGET_UNOFFICIAL_BUILD_ID += Vanilla
+endif
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st \
