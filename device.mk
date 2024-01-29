@@ -31,6 +31,11 @@ else
 TARGET_UNOFFICIAL_BUILD_ID += Vanilla
 endif
 
+# Inherit my stuff
+ifeq ($(WITH_PREINSTALL), true)
+$(call inherit-product, vendor/opensource/preinstall/preinstall-vendor.mk)
+endif
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st \
